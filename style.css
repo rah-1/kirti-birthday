@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap');
+:root{color-scheme:dark;font-family:Arial,Helvetica,sans-serif;background:#121213;color:#fff}*{box-sizing:border-box}body{margin:0}button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}button:focus-visible{outline:2px solid white;outline-offset:4px}[hidden]{display:none!important}#game{max-width:520px;min-height:100svh;margin:auto;display:flex;flex-direction:column;padding-bottom:env(safe-area-inset-bottom)}header{height:65px;border-bottom:1px solid #3a3a3c;display:flex;align-items:center;justify-content:space-between;padding:0 20px}h1{font-family:Georgia,serif;font-size:36px;letter-spacing:-1.5px;margin:0}#help{border:2px solid #818384;background:none;border-radius:50%;height:25px;width:25px;font-weight:bold;padding:0}.header-space{width:25px}.game-body{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:30px 14px 18px;min-height:350px}#board{display:grid;grid-template-columns:repeat(8,1fr);gap:5px;width:min(100%,410px)}.tile{aspect-ratio:1;border:2px solid #3a3a3c;display:flex;align-items:center;justify-content:center;font-size:clamp(20px,6vw,30px);font-weight:700;text-transform:uppercase}.tile.filled{border-color:#565758;animation:pop .1s}.tile.correct,.key.correct{background:#538d4e;border-color:#538d4e}.tile.present,.key.present{background:#b59f3b;border-color:#b59f3b}.tile.absent,.key.absent{background:#3a3a3c;border-color:#3a3a3c}.tile.flip{animation:flip .5s ease}.tile.shake{animation:shake .35s}#keyboard{padding:0 7px;display:flex;flex-direction:column;gap:8px}.keyrow{display:flex;justify-content:center;gap:6px}.key{border:0;border-radius:4px;background:#818384;font-weight:700;flex:1;height:58px;padding:0;font-size:14px;max-width:44px}.key.wide{flex:1.5;max-width:66px;font-size:12px}.hint{font-size:12px;color:#aaa;text-align:center;margin:16px 0}.keyrow:nth-child(2){padding:0 22px}#toast{position:fixed;z-index:4;top:80px;left:50%;transform:translateX(-50%);background:#fff;color:#121213;padding:13px 18px;border-radius:5px;font-weight:bold;opacity:0;pointer-events:none;transition:opacity .2s;max-width:90vw}#toast.visible{opacity:1}#success,#retry{text-align:center;margin-top:18px}#success p,#retry p{font-size:14px;color:#ccc;max-width:320px;line-height:1.5}#continue,#again{background:#fff;color:#121213;border:0;border-radius:4px;padding:13px 36px;font-weight:700}dialog{max-width:420px;width:90%;border:1px solid #565758;border-radius:8px;background:#121213;padding:30px;line-height:1.6}dialog::backdrop{background:#0009}#close-help{float:right;background:none;border:0;font-size:28px}.green{color:#8bc184}.yellow{color:#ddc76a}#story{height:100svh;overflow-y:auto;scroll-snap-type:y mandatory;background:#101011;overscroll-behavior-y:contain;scroll-behavior:smooth}.chapter{min-height:100svh;scroll-snap-align:start;display:flex;align-items:center;justify-content:center;padding:70px 24px;position:relative}.message{text-align:center;width:100%;max-width:820px;opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}.chapter.active .message{opacity:1;transform:translateY(0)}.date,.eyebrow{font-size:14px;letter-spacing:3px;text-transform:uppercase;color:#b4b4b8;margin:0 0 42px;line-height:1.8}.writing{font-family:'Caveat','Segoe Print','Bradley Hand',cursive;font-weight:400;font-size:clamp(40px,8vw,76px);line-height:1.2;margin:0}.ink{display:inline-block;clip-path:inset(-.5em calc(100% + .35em) -.5em -.35em)}.chapter.active .ink{animation:write .16s linear forwards;animation-delay:var(--delay)}.chapter.written .ink{clip-path:none}.chapter.written.active .ink{animation:none}.scroll-note{color:#85858a;font-size:14px;margin-top:64px}.afterword,.signoff{font-size:18px;color:#b4b4b8;margin-top:38px}.story-progress{position:fixed;top:0;left:0;right:0;height:2px;background:#28282a;z-index:5}.story-progress span{display:block;height:100%;background:#fff;width:0;transition:width .3s}#video{width:min(100%,680px);aspect-ratio:16/9;margin:35px auto 0;border:1px solid #333;display:flex;align-items:center;justify-content:center;background:#181819;color:#aaa;font-size:14px}iframe{width:100%;height:100%;border:0}.video-chapter .writing{font-size:clamp(40px,7vw,60px)}@keyframes pop{50%{transform:scale(1.08)}}@keyframes flip{50%{transform:rotateX(90deg)}}@keyframes shake{25%,75%{transform:translateX(-5px)}50%{transform:translateX(5px)}}@keyframes write{to{clip-path:inset(-.5em -.35em)}}@media(max-height:700px){.game-body{padding-top:16px;padding-bottom:12px;min-height:300px}#board{max-width:340px}.key{height:48px}.hint{margin:10px 0}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.ink{clip-path:none}}
+
+/* A little walk through six original birthday gardens. */
+#story{color-scheme:light;background:#faeed4;color:#344d3a;scrollbar-width:none}
+#story::-webkit-scrollbar{display:none}
+.chapter{isolation:isolate;background:var(--sky);padding:90px 30px 130px;scroll-snap-stop:always}
+.landscape{position:absolute;inset:0;overflow:hidden;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 75% 15%,#fff9e9a8,transparent 48%),linear-gradient(180deg,var(--sky) 30%,var(--glow) 100%)}
+.landscape:after{content:'';position:absolute;inset:0;opacity:.13;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath d='M0 0h160v160H0z' filter='url(%23grain)' opacity='.3'/%3E%3C/svg%3E");pointer-events:none}
+.meadow-sun{position:absolute;top:11%;right:17%;width:clamp(65px,10vw,128px);aspect-ratio:1;border-radius:50%;background:var(--glow);box-shadow:0 0 90px 30px #fff8db66;opacity:.7}
+.cloud{position:absolute;width:200px;height:28px;background:#fffaf0;border-radius:50%;filter:blur(7px);opacity:.4}
+.cloud-one{top:21%;left:8%;transform:rotate(-5deg)}
+.cloud-two{top:31%;right:5%;width:130px;opacity:.3}
+.meadow{position:absolute;bottom:0;left:0;width:100%;height:48%;overflow:visible}
+.flower-bed{transform-origin:50% 100%;animation:meadow-breeze 7s ease-in-out infinite;animation-play-state:paused}
+.chapter.active .flower-bed{animation-play-state:running}
+.message{position:relative;max-width:850px;margin-top:-15svh;text-shadow:0 1px 20px var(--sky)}
+.writing{font-size:clamp(44px,7.5vw,82px);line-height:1.22;color:#344d3a}
+.date,.eyebrow{color:#64765b;font-size:11px;letter-spacing:3px;margin-bottom:30px}
+.scroll-note{color:#52664c;margin-top:38px;font-size:12px;letter-spacing:.5px;display:inline-block;padding:8px 14px;border-radius:20px;background:color-mix(in srgb,var(--sky) 85%,transparent)}
+.afterword,.signoff{color:#5c6e51;font-size:16px;margin-top:24px}
+.story-progress{height:3px;background:#344d3a12}
+.story-progress span{background:#658260}
+.garden-footer{position:absolute;bottom:max(24px,env(safe-area-inset-bottom));left:5vw;right:5vw;display:flex;align-items:center;justify-content:space-between;color:#fff9e7;text-shadow:0 1px 7px #2e4c33;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;z-index:1}
+.garden-footer>span{background:#385d3ccc;border-radius:20px;padding:9px 14px;text-shadow:none}
+.garden-footer button{width:44px;height:44px;border:1px solid #fff9e77a;border-radius:50%;background:#385d3ccc;color:#fff9e7;font-size:23px;transition:background .2s}
+.garden-footer button:hover{background:#385d3c99}
+.garden-footer button:focus-visible{outline:2px solid #fff9e7;outline-offset:4px}
+.garden-heart{font-family:Georgia,serif;font-size:32px}
+.video-chapter .message{max-width:650px;margin-top:-5svh}
+.video-chapter .writing{font-size:clamp(42px,6vw,64px)}
+#video{background:#fffaf0d9;color:#64765b;border:1px solid #8b9a7466;border-radius:8px;box-shadow:0 12px 35px #344d3a12;overflow:hidden;margin-top:25px;width:min(100%,560px)}
+.video-chapter .eyebrow{margin-bottom:18px}
+.video-chapter .signoff{color:#344d3a}
+@keyframes meadow-breeze{0%,100%{transform:skewX(-.6deg)}50%{transform:skewX(.6deg)}}
+@media(max-width:600px){.chapter{padding:75px 24px 110px}.message{margin-top:-17svh}.writing{font-size:clamp(39px,9.8vw,58px)}.meadow{height:44%}.meadow-sun{top:9%;right:12%;width:70px}.date,.eyebrow{font-size:9px;letter-spacing:2.4px;margin-bottom:24px}.garden-footer{left:24px;right:24px;font-size:8px;letter-spacing:1.2px}.video-chapter .message{margin-top:-10svh}.video-chapter .writing{font-size:42px}#video{font-size:12px}.cloud-one{width:120px}}
+@media(max-height:600px){.chapter{min-height:100svh;padding:45px 28px 85px}.writing{font-size:clamp(34px,6vw,55px)}.date,.eyebrow{margin-bottom:14px}.scroll-note{margin-top:20px}.video-chapter{min-height:max(100svh,560px)}.video-chapter .message{margin-top:0}#video{max-width:400px}.garden-footer{bottom:14px}}
+@media(prefers-reduced-motion:reduce){.flower-bed{animation:none}.message{transform:none}}
+
+/* Wordle welcome screen, before the puzzle. */
+#welcome{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:50px 24px;background:#121213;text-align:center}
+.welcome-inner{width:100%;max-width:420px}
+.wordle-mark{display:block;width:48px;height:48px;margin:0 auto 18px}
+#welcome-title{font-family:Georgia,'Times New Roman',serif;font-size:40px;font-weight:900;letter-spacing:-1.5px;line-height:1.1;margin:0 0 14px}
+.welcome-description{font-size:23px;line-height:1.2;letter-spacing:-.6px;margin:0 0 30px}
+#play{display:block;width:180px;min-height:44px;margin:0 auto;border:0;border-radius:28px;background:#f8f8f8;color:#121213;font-size:16px;font-weight:600}
+#play:hover{background:#dedede}
+.welcome-date{font-size:14px;line-height:1.4;margin:30px 0 0}
+@media(max-width:420px){#welcome-title{font-size:36px}.welcome-description{font-size:22px}#play{width:160px}}
